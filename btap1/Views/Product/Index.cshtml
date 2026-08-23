@@ -1,0 +1,67 @@
+﻿@model List<btap1.Models.Product>
+
+@{
+    ViewData["Title"] = "Quản lý sản phẩm";
+}
+
+<link rel="stylesheet" href="~/css/product.css" />
+
+<div class="container">
+
+    <h2>Quản lý sản phẩm</h2>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Created At</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var product in Model)
+            {
+                <tr>
+
+                    <td>
+                        @product.ID
+                    </td>
+
+                    <td>
+                        @product.Name
+                    </td>
+
+                    <td>
+                        @product.Price.ToString("N0") đ
+                    </td>
+
+                    <td>
+                        @product.CreatedAt.ToString("dd-MM-yyyy")
+                    </td>
+
+                    <td>
+                        <img src="~/images/@product.Image"
+                             alt="@product.Name" />
+                    </td>
+
+                    <td>
+                        <a href="#" class="btn-view">
+                            View
+                        </a>
+                    </td>
+
+                </tr>
+            }
+            
+
+        </tbody>
+
+    </table>
+
+</div>

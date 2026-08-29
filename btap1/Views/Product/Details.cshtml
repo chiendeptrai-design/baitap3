@@ -1,0 +1,43 @@
+﻿@model btap1.Models.Product
+
+@{
+    ViewData["Title"] = "Chi tiết sản phẩm";
+}
+
+<link rel="stylesheet" href="~/css/product.css" />
+
+<div class="container">
+
+    <h2>Chi tiết sản phẩm</h2>
+
+    <div class="product-detail">
+
+        <div>
+            <img src="~/avatar/@Model.Image"
+                 alt="@Model.Name"
+                 class="detail-image" />
+        </div>
+
+        <div class="product-info">
+
+            <h3>@Model.Name</h3>
+
+            <p><strong>ID:</strong> @Model.ID</p>
+
+            <p><strong>Tên sản phẩm:</strong> @Model.Name</p>
+
+            <p><strong>Giá:</strong> @Model.Price.ToString("N0") đ</p>
+
+            <p><strong>Ngày tạo:</strong> @Model.CreatedAt.ToString("dd-MM-yyyy")</p>
+
+            <a asp-controller="Product"
+               asp-action="Index"
+               class="btn-back">
+                ← Quay lại
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
